@@ -7,7 +7,7 @@ const readRepos = () => {
   return usernames.map(username => ({username, repo: "vending-machine"}))
 }
 
-const clone = ({username, repo}) => exec(`git clone https://github.com/${username}/${repo} ${repo}-${username}`);
+const clone = ({username, repo}) => exec(`git clone https://github.com/${username}/${repo} repos${repo}-${username}`);
 
 const main = () => {
   readRepos().forEach(clone);
