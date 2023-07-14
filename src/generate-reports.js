@@ -1,29 +1,36 @@
 const fs = require("fs");
 const { exec } = require("node:child_process");
 
-const generateReports = directory => {
-  if (!fs.existsSync(directory)) {
-    console.error(`${directory} doesn't exists`);
-    return;
-  }
+const generateReport = (repo, destination) => {
+  console.log(repo, destination);
+  const name = (repo.includes("/") ? repo.match(/.*\/(.*)/)[1] : repo).replace(
+    /\..*$/,
+    ".json"
+  );
 
-  exec("mkdir reports");
-  let repos;
-
-  try {
-    repos = fs.readdirSync(directory);
-  } catch (e) {
-    exec(`npx eslint --format json ${directory} > reports/${directory}.json`);
-    return;
-  }
-
-  repos.filter(name => !name.startsWith("."));
-
-  repos.forEach(repo => {
-    const repoName = repo + ".json";
-    const repoPath = directory + "/" + repo;
-    exec(`npx eslint --format json ${repoPath} > reports/${repoName}`);
-  });
+  exec(`npx eslint --format json ${repo} > ${destination}/${name}`);
 };
 
-generateReports(process.argv[2]);
+const generateReports = (source, destination) => {
+  const repos = fs.readdirSync(source).filter(file => !file.startsWith("."));
+
+  repos.forEach(repo => generateReport(source + "/" + repo, destination));
+};
+
+const main = () => {
+  const source = process.argv[2];
+  const destination = process.argv[3] || process.env.PWD;
+
+  if (!(fs.existsSync(source) && fs.existsSync(destination))) {
+    console.error(`${source} or ${destination} doesn't exists`);
+    return;
+  }
+
+  const destinationPath = destination + "/reports";
+  exec(`mkdir ${destinationPath}`);
+
+  if (fs.existsSync(source + "/")) generateReports(source, destinationPath);
+  else generateReport(source, destinationPath);
+};
+
+main();
