@@ -1,10 +1,8 @@
-const cloneAll = require("./scripts/clone-all");
-const generateReports = require("./scripts/generate-report");
+const { analyzeReports } = require("./src/analyzer");
 
 const main = () => {
-  const users = require("./resources/user-repo-details.json");
-  cloneAll(users);
-  generateReports(users);
+  const lintReports = require("./resources/.reports.json");
+  analyzeReports(lintReports);
 }
 
 main();
