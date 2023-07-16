@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Buddha Rajkumar",
+    "username": "b-rajkumar",
+    "repos": [{ "repo": "aoc-2015", "src": ".repos/b-rajkumar/aoc-2015" }]
+  },
+  {
+    "name": "Vidita Kumari",
+    "username": "kvidita",
+    "repos": [
+      { "repo": "vending-machine", "src": ".repos/kvidita/vending-machine" }
+    ]
+  },
+  {
+    "name": "Rishabh Rawat",
+    "username": "lordeadroid",
+    "repos": [
+      { "repo": "vending-machine", "src": ".repos/lordeadroid/vending-machine" }
+    ]
+  },
+  {
+    "name": "Manjeet Sharma",
+    "username": "manjeetsharma0796",
+    "repos": [
+      {
+        "repo": "advent-of-code-2015",
+        "src": ".repos/manjeetsharma0796/advent-of-code-2015"
+      }
+    ]
+  },
+  {
+    "name": "Gourab Porey",
+    "username": "gourabporey",
+    "repos": [
+      { "repo": "vending-machine", "src": ".repos/gourabporey/vending-machine" }
+    ]
+  },
+  {
+    "name": "Riya Ghosal",
+    "username": "GlitchRemo",
+    "repos": [
+      { "repo": "advent-of-code", "src": ".repos/GlitchRemo/advent-of-code" }
+    ]
+  },
+  {
+    "name": "Sauma Saha",
+    "username": "SaumaSaha",
+    "repos": [
+      { "repo": "vending-machine", "src": ".repos/SaumaSaha/vending-machine" }
+    ]
+  },
+  {
+    "name": "Debdutta Mondal",
+    "username": "m-debdutta",
+    "repos": [
+      { "repo": "vending-machine", "src": ".repos/m-debdutta/vending-machine" }
+    ]
+  },
+  {
+    "name": "Milan Chakraborty",
+    "username": "MilanChakraborty",
+    "repos": [
+      {
+        "repo": "vending-machine",
+        "src": ".repos/MilanChakraborty/vending-machine"
+      }
+    ]
+  },
+  {
+    "name": "Sourov Kr Halder",
+    "username": "SourovKH",
+    "repos": [
+      { "repo": "vending-machine", "src": ".repos/SourovKH/vending-machine" }
+    ]
+  },
+  {
+    "name": "Utsab Bera",
+    "username": "nCoder24",
+    "repos": [
+      { "repo": "vending-machine", "src": ".repos/nCoder24/vending-machine" }
+    ]
+  },
+  {
+    "name": "Biswajit Sen",
+    "username": "BiswajitSen",
+    "repos": [
+      { "repo": "vending-machine", "src": ".repos/BiswajitSen/vending-machine" }
+    ]
+  },
+  {
+    "name": "Swagato Chakraborty",
+    "username": "Swagato1024",
+    "repos": [
+      { "repo": "vending-machine", "src": ".repos/Swagato1024/vending-machine" }
+    ]
+  },
+  {
+    "name": "Bittu",
+    "username": "bittukumarthakur",
+    "repos": [
+      {
+        "repo": "vending-machine",
+        "src": ".repos/bittukumarthakur/vending-machine"
+      }
+    ]
+  },
+  {
+    "name": "Mohd Qasim",
+    "username": "mohdqasim02",
+    "repos": [
+      { "repo": "vending-machine", "src": ".repos/mohdqasim02/vending-machine" }
+    ]
+  }
+]
