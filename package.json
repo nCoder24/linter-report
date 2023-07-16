@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "update": "node scripts/update.js"
+    "update": "node scripts/update.js",
+    "analytics": "node main.js"
   },
   "keywords": [],
   "author": "",
