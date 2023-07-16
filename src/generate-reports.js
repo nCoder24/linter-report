@@ -1,36 +1,33 @@
 const fs = require("fs");
 const { exec } = require("node:child_process");
 
-const generateReport = (repo, destination) => {
-  console.log(repo, destination);
-  const name = (repo.includes("/") ? repo.match(/.*\/(.*)/)[1] : repo).replace(
-    /\..*$/,
-    ".json"
-  );
+const readJson = (filePath) => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
-  exec(`npx eslint --format json ${repo} > ${destination}/${name}`);
+const generateReport = (userName, repo, callback) => {
+  const { name, src } = repo;
+  exec(`npx eslint --format json ${src}`, (error, report, stderr) => {
+    console.log(error);
+    console.log(stderr);
+
+    callback(userName, { [name]: report });
+  });
 };
 
-const generateReports = (source, destination) => {
-  const repos = fs.readdirSync(source).filter(file => !file.startsWith("."));
-
-  repos.forEach(repo => generateReport(source + "/" + repo, destination));
-};
 
 const main = () => {
-  const source = process.argv[2];
-  const destination = process.argv[3] || process.env.PWD;
-
-  if (!(fs.existsSync(source) && fs.existsSync(destination))) {
-    console.error(`${source} or ${destination} doesn't exists`);
-    return;
+  const lintReports = {};
+  const populateReports = (user, report) => {
+    const userReports = (lintReports[user] || []);
+    lintReports[user] = [...userReports, report];
+    console.log(user);
   }
 
-  const destinationPath = destination + "/reports";
-  exec(`mkdir ${destinationPath}`);
+  const userRepoDetails = readJson('./resources/user-repo-details.json');
 
-  if (fs.existsSync(source + "/")) generateReports(source, destinationPath);
-  else generateReport(source, destinationPath);
+  userRepoDetails.forEach(({ userName, repos }) => {
+    repos.forEach(repo => generateReport(userName, repo, populateReports));
+  });
+
 };
 
 main();
