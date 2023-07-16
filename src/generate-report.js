@@ -1,6 +1,5 @@
 const fs = require("fs");
 const { exec } = require("node:child_process");
-const { analyzeReports } = require("./analyzer");
 
 const generateReport = (userName, repository, callback) => {
   const { repo, src } = repository;
@@ -15,19 +14,18 @@ const generateReports = (userRepoDetails) => {
   const lintReports = {};
 
   const populateReports = (user, report) => {
-    const userReports = (lintReports[user] || []);
+    const userReports = lintReports[user] || [];
 
     lintReports[user] = [...userReports, report];
 
     if (Object.keys(lintReports).length === userRepoDetails.length) {
-      analyzeReports(lintReports);
+      fs.writeFileSync("resources/.reports.json", JSON.stringify(lintReports));
     }
-  }
+  };
 
   userRepoDetails.forEach(({ username, repos }) => {
-    repos.forEach(repo => generateReport(username, repo, populateReports));
+    repos.forEach((repo) => generateReport(username, repo, populateReports));
   });
-
 };
 
 module.exports = generateReports;

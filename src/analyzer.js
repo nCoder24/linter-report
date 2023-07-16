@@ -20,4 +20,9 @@ const analyzeReports = (lintReports) => {
   console.log(Object.fromEntries(reports));
 }
 
-exports.analyzeReports = analyzeReports;
+const main = () => {
+  const lintReports = require("../resources/.reports.json");
+  analyzeReports(lintReports);
+}
+
+main();
