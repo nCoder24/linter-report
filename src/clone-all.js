@@ -15,11 +15,18 @@ const readRepos = () =>
     .map((userData) => createUser(userData.trim().split(",")));
 
 const clone = ({ username, repos }) =>
-  repos.forEach((repo) =>
-    exec(
-      `git clone https://github.com/${username}/${repo} repos/${username}/${repo}`
-    )
-  );
+  repos.forEach((repo) => {
+    const cloneCmd = `git clone https://github.com/${username}/${repo} repos/${username}/${repo}`;
+    exec(cloneCmd, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+      }
+
+      console.log(stdout);
+      console.error(stderr);
+    });
+  });
 
 const main = () => {
   readRepos().forEach(clone);
