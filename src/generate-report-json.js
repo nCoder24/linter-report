@@ -11,9 +11,8 @@ const generateReport = (userName, repository, callback) => {
   });
 };
 
-const main = () => {
+const generateReports = (userRepoDetails) => {
   const lintReports = {};
-  const userRepoDetails = require('../resources/user-repo-details.json');
 
   const populateReports = (user, report) => {
     const userReports = (lintReports[user] || []);
@@ -31,4 +30,4 @@ const main = () => {
 
 };
 
-main();
+module.exports = generateReports;

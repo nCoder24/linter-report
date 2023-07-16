@@ -14,8 +14,6 @@ const clone = ({ username, repos }) =>
     });
   });
 
-const main = () => {
-  require("../resources/user-repo-details.json").forEach(clone);
-};
+const cloneAll = (users) => users.forEach(clone);
 
-main();
+module.exports = cloneAll;
