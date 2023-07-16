@@ -5,7 +5,8 @@
   "main": "clone-all.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint-report": "node main.js"
   },
   "keywords": [],
   "author": "",
