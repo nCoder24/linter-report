@@ -14,9 +14,8 @@ module.exports = {
     "max-statements": ["error", 10],
     
     "no-cond-assign": "error",
-    "no-empty": "warn",
-    "no-console": "warn",
-    "no-implicit-coercion": "warn",
+    "no-empty": "error",
+    "no-implicit-coercion": "error",
     "no-implicit-globals": "error",
     "no-param-reassign": "error",
     "no-shadow": "error",
