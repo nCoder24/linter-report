@@ -3,7 +3,7 @@ const fs = require("fs");
 const createUser = ([name, username, ...repos]) => ({
   name,
   username,
-  repos: repos.map(repo => ({repo, src: `.repos/${username}/${repo}`})),
+  repos: repos.map(repo => ({repo, src: `resources/.repos/${username}/${repo}`})),
 });
 
 const parseUserRepos = (rawUserRepos) => {

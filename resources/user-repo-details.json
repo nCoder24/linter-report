@@ -3,10 +3,7 @@
     "name": "Buddha Rajkumar",
     "username": "b-rajkumar",
     "repos": [
-      {
-        "repo": "aoc-2015",
-        "src": ".repos/b-rajkumar/aoc-2015"
-      }
+      { "repo": "aoc-2015", "src": "resources/.repos/b-rajkumar/aoc-2015" }
     ]
   },
   {
@@ -15,7 +12,7 @@
     "repos": [
       {
         "repo": "vending-machine",
-        "src": ".repos/kvidita/vending-machine"
+        "src": "resources/.repos/kvidita/vending-machine"
       }
     ]
   },
@@ -25,7 +22,7 @@
     "repos": [
       {
         "repo": "vending-machine",
-        "src": ".repos/lordeadroid/vending-machine"
+        "src": "resources/.repos/lordeadroid/vending-machine"
       }
     ]
   },
@@ -35,7 +32,7 @@
     "repos": [
       {
         "repo": "advent-of-code-2015",
-        "src": ".repos/manjeetsharma0796/advent-of-code-2015"
+        "src": "resources/.repos/manjeetsharma0796/advent-of-code-2015"
       }
     ]
   },
@@ -45,7 +42,7 @@
     "repos": [
       {
         "repo": "vending-machine",
-        "src": ".repos/gourabporey/vending-machine"
+        "src": "resources/.repos/gourabporey/vending-machine"
       }
     ]
   },
@@ -55,7 +52,7 @@
     "repos": [
       {
         "repo": "advent-of-code",
-        "src": ".repos/GlitchRemo/advent-of-code"
+        "src": "resources/.repos/GlitchRemo/advent-of-code"
       }
     ]
   },
@@ -65,7 +62,7 @@
     "repos": [
       {
         "repo": "vending-machine",
-        "src": ".repos/SaumaSaha/vending-machine"
+        "src": "resources/.repos/SaumaSaha/vending-machine"
       }
     ]
   },
@@ -75,7 +72,7 @@
     "repos": [
       {
         "repo": "vending-machine",
-        "src": ".repos/m-debdutta/vending-machine"
+        "src": "resources/.repos/m-debdutta/vending-machine"
       }
     ]
   },
@@ -85,7 +82,7 @@
     "repos": [
       {
         "repo": "vending-machine",
-        "src": ".repos/MilanChakraborty/vending-machine"
+        "src": "resources/.repos/MilanChakraborty/vending-machine"
       }
     ]
   },
@@ -95,7 +92,7 @@
     "repos": [
       {
         "repo": "vending-machine",
-        "src": ".repos/SourovKH/vending-machine"
+        "src": "resources/.repos/SourovKH/vending-machine"
       }
     ]
   },
@@ -105,7 +102,7 @@
     "repos": [
       {
         "repo": "vending-machine",
-        "src": ".repos/nCoder24/vending-machine"
+        "src": "resources/.repos/nCoder24/vending-machine"
       }
     ]
   },
@@ -115,7 +112,7 @@
     "repos": [
       {
         "repo": "vending-machine",
-        "src": ".repos/BiswajitSen/vending-machine"
+        "src": "resources/.repos/BiswajitSen/vending-machine"
       }
     ]
   },
@@ -125,7 +122,7 @@
     "repos": [
       {
         "repo": "vending-machine",
-        "src": ".repos/Swagato1024/vending-machine"
+        "src": "resources/.repos/Swagato1024/vending-machine"
       }
     ]
   },
@@ -135,7 +132,7 @@
     "repos": [
       {
         "repo": "vending-machine",
-        "src": ".repos/bittukumarthakur/vending-machine"
+        "src": "resources/.repos/bittukumarthakur/vending-machine"
       }
     ]
   },
@@ -145,7 +142,7 @@
     "repos": [
       {
         "repo": "vending-machine",
-        "src": ".repos/mohdqasim02/vending-machine"
+        "src": "resources/.repos/mohdqasim02/vending-machine"
       }
     ]
   }

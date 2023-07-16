@@ -13,7 +13,7 @@ const clone = ({ username, repos }) =>
   });
 
 const cloneAll = (users) => {
-  fs.rmSync(".repos", {recursive: true});
+  if(fs.existsSync("resources/.repos")) fs.rmSync(".repos", {recursive: true});
   users.forEach(clone);
 };
 
