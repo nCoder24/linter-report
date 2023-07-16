@@ -1,31 +1,32 @@
 const fs = require("fs");
 const { exec } = require("node:child_process");
+const { analyzeReports } = require("./analyzer");
 
-const readJson = (filePath) => JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+const generateReport = (userName, repository, callback) => {
+  const { repo, src } = repository;
+  exec(`npx eslint --format json "${src}"`, (_, stdout, stderr) => {
+    if (stderr) console.error(stderr);
 
-const generateReport = (userName, repo, callback) => {
-  const { name, src } = repo;
-  exec(`npx eslint --format json ${src}`, (error, report, stderr) => {
-    console.log(error);
-    console.log(stderr);
-
-    callback(userName, { [name]: report });
+    callback(userName, { [repo]: JSON.parse(stdout) });
   });
 };
 
-
 const main = () => {
   const lintReports = {};
+  const userRepoDetails = require('../resources/user-repo-details.json');
+
   const populateReports = (user, report) => {
     const userReports = (lintReports[user] || []);
+
     lintReports[user] = [...userReports, report];
-    console.log(user);
+
+    if (Object.keys(lintReports).length === userRepoDetails.length) {
+      analyzeReports(lintReports);
+    }
   }
 
-  const userRepoDetails = readJson('./resources/user-repo-details.json');
-
-  userRepoDetails.forEach(({ userName, repos }) => {
-    repos.forEach(repo => generateReport(userName, repo, populateReports));
+  userRepoDetails.forEach(({ username, repos }) => {
+    repos.forEach(repo => generateReport(username, repo, populateReports));
   });
 
 };
