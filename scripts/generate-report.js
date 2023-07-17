@@ -14,9 +14,8 @@ const generateReports = (userRepoDetails) => {
   const lintReports = {};
 
   const populateReports = (user, report) => {
-    const userReports = lintReports[user] || [];
-
-    lintReports[user] = [...userReports, report];
+    const userReports = lintReports[user] || {};
+    lintReports[user] = { ...userReports, ...report };
 
     if (Object.keys(lintReports).length === userRepoDetails.length) {
       fs.writeFileSync("resources/.reports.json", JSON.stringify(lintReports));
