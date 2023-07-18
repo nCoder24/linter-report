@@ -1,8 +1,9 @@
 const { analyzeReports } = require("./src/analyzer");
+const { generateErrorSummary } = require("./src/detailed-error-summary");
 
 const main = () => {
   const lintReports = require("./resources/.reports.json");
-  analyzeReports(lintReports);
+  console.log(generateErrorSummary(lintReports));
 }
 
 main();
