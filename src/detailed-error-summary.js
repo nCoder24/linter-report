@@ -28,4 +28,4 @@ const generateErrorSummary = users => {
   );
 };
 
-exports.generateRepoErrorSummary = generateRepoErrorSummary;
+module.exports = {generateRepoErrorSummary,  generateErrorSummary};
