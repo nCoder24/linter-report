@@ -21,11 +21,11 @@ const generateUserReposErrorSummary = reposReports => {
 
 const generateErrorSummary = users => {
   return Object.fromEntries(
-    Object.entries(users).map(([username, reposreports]) => {
-      const errorReports = generateUserReposErrorSummary(reposreports);
+    Object.entries(users).map(([username, reposReports]) => {
+      const errorReports = generateUserReposErrorSummary(reposReports);
       return [username, errorReports];
     })
   );
 };
 
-module.exports = {generateRepoErrorSummary,  generateErrorSummary};
+module.exports = {generateRepoErrorSummary, generateUserReposErrorSummary,  generateErrorSummary};
