@@ -1,9 +1,14 @@
 const { analyzeReports } = require("./src/analyzer");
-const { generateErrorSummary } = require("./src/detailed-error-summary");
+const { generateUserErrorSummary } = require("./src/detailed-error-summary");
 
-const main = () => {
+
+const main = (option) => {
   const lintReports = require("./resources/.reports.json");
-  console.log(generateErrorSummary(lintReports));
+
+  if (option === 'overview')
+    console.log(analyzeReports(lintReports));
+  else
+    console.log(generateUserErrorSummary(lintReports));
 }
 
-main();
+main(process.argv[2]);
