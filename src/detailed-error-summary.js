@@ -9,23 +9,27 @@ const generateRepoErrorSummary = linterReport => {
   );
 };
 
-const generateUserReposErrorSummary = reposReports => {
+const generateReposErrorSummary = reports => {
   return Object.fromEntries(
-    Object.entries(reposReports).map(([repoName, repoReport]) => {
-      const repoErrorReport = generateRepoErrorSummary(repoReport);
+    Object.entries(reports).map(([repoName, report]) => {
+      const errorSummary = generateRepoErrorSummary(report);
 
-      return [repoName, repoErrorReport];
+      return [repoName, errorSummary];
     })
   );
 };
 
-const generateErrorSummary = users => {
+const generateUserErrorSummary = users => {
   return Object.fromEntries(
-    Object.entries(users).map(([username, reposReports]) => {
-      const errorReports = generateUserReposErrorSummary(reposReports);
-      return [username, errorReports];
+    Object.entries(users).map(([username, reports]) => {
+      const reportsErrorSummaries = generateReposErrorSummary(reports);
+      return [username, reportsErrorSummaries];
     })
   );
 };
 
-module.exports = {generateRepoErrorSummary, generateUserReposErrorSummary,  generateErrorSummary};
+module.exports = {
+  generateRepoErrorSummary,
+  generateReposErrorSummary,
+  generateUserErrorSummary
+};
