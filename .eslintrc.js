@@ -5,7 +5,6 @@ module.exports = {
 
   rules: {
     "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
-    "quotes": ["error", "double"],
     "indent": ["error", 2, { "SwitchCase": 1 }],
 
     "complexity": ["error", 2],
