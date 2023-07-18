@@ -1,9 +1,9 @@
 const { describe, it } = require("node:test");
 const fs = require("fs");
 const assert = require("assert");
-const { generateErrorSummary } = require("../src/detailed-error-summary");
+const { generateRepoErrorSummary } = require("../src/detailed-error-summary");
 
-describe("generateErrorSummary", () => {
+describe("generateRepoErrorSummary", () => {
   it("should generate the error summary by taking the linter output json", () => {
     const linterReport = [
       {
@@ -207,6 +207,6 @@ describe("generateErrorSummary", () => {
       complex: 2,
     };
 
-    assert.deepStrictEqual(generateErrorSummary(linterReport), expected);
+    assert.deepStrictEqual(generateRepoErrorSummary(linterReport), expected);
   });
 });

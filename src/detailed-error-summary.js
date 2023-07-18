@@ -1,6 +1,6 @@
 const _ = require("lodash");
 
-const generateErrorSummary = linterReport => {
+const generateRepoErrorSummary = linterReport => {
   const errors = _.flatMap(linterReport, "messages");
   const groupedErrors = Object.entries(_.groupBy(errors, "messageId"));
 
@@ -9,4 +9,23 @@ const generateErrorSummary = linterReport => {
   );
 };
 
-module.exports = { generateErrorSummary };
+const generateUserReposErrorSummary = reposReports => {
+  return Object.fromEntries(
+    Object.entries(reposReports).map(([repoName, repoReport]) => {
+      const repoErrorReport = generateRepoErrorSummary(repoReport);
+
+      return [repoName, repoErrorReport];
+    })
+  );
+};
+
+const generateErrorSummary = users => {
+  return Object.fromEntries(
+    Object.entries(users).map(([username, reposreports]) => {
+      const errorReports = generateUserReposErrorSummary(reposreports);
+      return [username, errorReports];
+    })
+  );
+};
+
+exports.generateRepoErrorSummary = generateRepoErrorSummary;
